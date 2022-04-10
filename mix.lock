@@ -1,0 +1,8 @@
+%{
+  "amqp": {:hex, :amqp, "0.1.4", "5d9112c3a850234559073c23fda173364dfd11d8ce8d0138cd46f653fdc55f08", [:mix], [{:amqp_client, ">= 3.5.6", [hex: :amqp_client, repo: "hexpm", optional: false]}], "hexpm", "a75d9b9283f306627b1d72a1ae326bb8c2910c5cd8198fa036e575b74b340ef4"},
+  "amqp_client": {:hex, :amqp_client, "3.9.11", "4ebe8040be3ee195e42bb483d37cd64faf3c306201dc22a3f5cce2a91a9e562e", [:make, :rebar3], [{:rabbit_common, "3.9.11", [hex: :rabbit_common, repo: "hexpm", optional: false]}], "hexpm", "cdd74bc8e9d5e8610975009dcae1293bdf7198ee6d8315a1ffb5055467010520"},
+  "credentials_obfuscation": {:hex, :credentials_obfuscation, "2.4.0", "9fb57683b84899ca3546b384e59ab5d3054a9f334eba50d74c82cd0ae82dd6ca", [:rebar3], [], "hexpm", "d28a89830e30698b075de9a4dbe683a20685c6bed1e3b7df744a0c06e6ff200a"},
+  "jsx": {:hex, :jsx, "3.1.0", "d12516baa0bb23a59bb35dccaf02a1bd08243fcbb9efe24f2d9d056ccff71268", [:rebar3], [], "hexpm", "0c5cc8fdc11b53cc25cf65ac6705ad39e54ecc56d1c22e4adb8f5a53fb9427f3"},
+  "rabbit_common": {:hex, :rabbit_common, "3.9.11", "25df900b1aec7357c90253cc4528b43c5ff064f27c8c627707b747ae986ebf77", [:make, :rebar3], [{:credentials_obfuscation, "2.4.0", [hex: :credentials_obfuscation, repo: "hexpm", optional: false]}, {:jsx, "3.1.0", [hex: :jsx, repo: "hexpm", optional: false]}, {:recon, "2.5.1", [hex: :recon, repo: "hexpm", optional: false]}], "hexpm", "1bcac63760a0bf0e55d7d3c2ff36ed2310e0b560bd110a5a2d602d76d9c08e1a"},
+  "recon": {:hex, :recon, "2.5.1", "430ffa60685ac1efdfb1fe4c97b8767c92d0d92e6e7c3e8621559ba77598678a", [:mix, :rebar3], [], "hexpm", "5721c6b6d50122d8f68cccac712caa1231f97894bab779eff5ff0f886cb44648"},
+}
