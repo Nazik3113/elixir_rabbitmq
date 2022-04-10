@@ -5,6 +5,10 @@ defmodule ElixirRabbitmq.Consumers.Test1 do
   alias ElixirRabbitmq.DynamicConsumer
   alias ElixirRabbitmq.Connection, as: ElRabbitmqConnection
 
+  @moduledoc """
+    Consumer module.
+  """
+
   @reconnect_interval 5_000
   @queue "test_1"
 

@@ -2,6 +2,10 @@ defmodule ElixirRabbitmq.DynamicConsumer do
   use DynamicSupervisor
   require Logger
 
+  @moduledoc """
+    Moodule to spawn and supervise consumers.
+  """
+
   def start_link(init_arg) do
     DynamicSupervisor.start_link(__MODULE__, init_arg, name: __MODULE__)
   end
@@ -38,19 +42,23 @@ defmodule ElixirRabbitmq.DynamicConsumer do
       error -> raise "#{__MODULE__} new_child/1 ERROR -> #{inspect(error)}"
     end
 
-    DynamicSupervisor.count_children(__MODULE__) |> IO.inspect()
+    Logger.info("#{inspect(DynamicSupervisor.count_children(__MODULE__))}", ansi_color: :green)
   end
 
-  def spawn_consumers do
+  defp spawn_consumers do
     elixir_rabbitmq_queues =
       Application.get_env(:elixir_rabbitmq, :queue_conf)[:elixir_rabbitmq].queues
 
     queues = elixir_rabbitmq_queues
 
     Enum.each(queues, fn queue_conf ->
-      Enum.each(1..queue_conf.consumers_count, fn consumer_count ->
-        spawn(fn -> new_child(Map.put(queue_conf, :id, consumer_count)) end)
-      end)
+      spawn_consumer(queue_conf)
+    end)
+  end
+
+  defp spawn_consumer(queue_conf) do
+    Enum.each(1..queue_conf.consumers_count, fn consumer_count ->
+      spawn(fn -> new_child(Map.put(queue_conf, :id, consumer_count)) end)
     end)
   end
 end

@@ -3,6 +3,10 @@ defmodule ElixirRabbitmq.Publisher do
   require Logger
   use AMQP
 
+  @moduledoc """
+    Module for publish messages into queues.
+  """
+
   def start_link(_) do
     GenServer.start_link(__MODULE__, [], name: __MODULE__)
   end
