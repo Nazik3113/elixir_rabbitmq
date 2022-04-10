@@ -2,10 +2,10 @@ import Config
 
 config :elixir_rabbitmq, :queue_conf,
   elixir_rabbitmq: %{
-    user: "guest",
-    password: "guest",
-    host: "localhost",
-    port: "5672",
+    user: System.get_env("USER"),
+    password: System.get_env("PASSWORD"),
+    host: System.get_env("HOST"),
+    port: System.get_env("PORT"),
     connection_module: ElixirRabbitmq.Connection,
     queues: [
       %{

@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  elixir_rabbitmq:
+    build:
+      context: .
+    environment:
+      USER: guest
+      PASSWORD: guest
+      HOST: rabbitmq
+      PORT: 5672
+    depends_on:
+      - rabbitmq
+  rabbitmq:
+    image: rabbitmq:3.9.14-management-alpine
+    container_name: 'elixir_rabbitmqq'
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+        - 5672:5672 # connect host
+        - 15672:15672 # manage interface host      

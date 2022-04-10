@@ -33,6 +33,8 @@ defmodule ElixirRabbitmq.Consumers.Test1 do
   def handle_info(:connect, state) do
     case ElRabbitmqConnection.get_connection() do
       {:ok, conn} ->
+        Logger.info("Connection established...")
+
         # Get notifications when the connection goes down
         Process.monitor(conn.pid)
 
