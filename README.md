@@ -1,4 +1,4 @@
-# Demo exlixir rabbitmq connection with multiple cunsumers and automate connections.
+# Demo exlixir rabbitmq connection with multiple concurrent cunsumers and automate connections.
 
 **Build**
 
