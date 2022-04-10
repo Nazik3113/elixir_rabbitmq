@@ -98,10 +98,10 @@ defmodule ElixirRabbitmq.Consumers.Test1 do
 
   def consume(chan, tag, redelivered, payload) do
     Logger.info("||||||||||||||||||||||||||||||||||||||||||", ansi_color: :blue)
-    Logger.info(inspect(self()))
-    Logger.info(inspect(payload))
-    Logger.info(inspect(tag))
-    Logger.info(inspect(redelivered))
+    Logger.info("Process id: #{inspect(self())}")
+    Logger.info("Payload: #{inspect(payload)}")
+    Logger.info("Delivery tag: #{inspect(tag)}")
+    Logger.info("Redelivered: #{inspect(redelivered)}")
     Logger.info("||||||||||||||||||||||||||||||||||||||||||", ansi_color: :blue)
     # Retry consuming a message once in case of exception
     # Basic.reject(chan, tag, requeue: not redelivered)

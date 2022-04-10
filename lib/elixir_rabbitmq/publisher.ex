@@ -37,7 +37,7 @@ defmodule ElixirRabbitmq.Publisher do
     if Process.alive?(chan.pid) do
       case Basic.publish(chan, "", queue, "#{message}") do
         :ok ->
-          Logger.info("Message #{message} succeful published", ansi_color: :blue)
+          Logger.info("Message \"#{message}\" succeful published", ansi_color: :blue)
           :ok
 
         _ ->

@@ -12,7 +12,8 @@ defmodule ElixirRabbitmq.Application do
       # {ElixirRabbitmq.Worker, arg}
       ElixirRabbitmq.Connection,
       ElixirRabbitmq.Publisher,
-      ElixirRabbitmq.DynamicConsumer
+      ElixirRabbitmq.DynamicConsumer,
+      ElixirRabbitmq.DemoLoop
     ]
 
     opts = [strategy: :one_for_one, name: ElixirRabbitmq.Supervisor]
